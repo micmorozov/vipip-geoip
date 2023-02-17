@@ -1,0 +1,16 @@
+{
+    "name": "inovica/vipip-geoip",
+    "description": "VipIP GeoIP",
+    "license": "private",
+    "require": {
+        "php": ">=8.1",
+        "geoip2/geoip2": "~2.0",
+        "monolog/monolog": "^3.2",
+        "graylog2/gelf-php": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "VipIP\\GeoIP\\": "./src"
+        }
+    }
+}

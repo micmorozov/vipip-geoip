@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./:/var/www/html:rw
+      - ./docker/var/log/nginx:/var/log/nginx:rw
+    links:
+      - php
+
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www/html:rw
+      - composer-cache:/root/.composer
+
+volumes:
+  composer-cache: {}
